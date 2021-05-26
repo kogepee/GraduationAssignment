@@ -4,10 +4,11 @@
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 700px;
+  height: 500px;
   margin: 0 auto;}
-
-/*タブのスタイル*/
-.tab_item {
+  
+  /*タブのスタイル*/
+  .tab_item {
   width: calc(100%/4);
   height: 50px;
   border-bottom: 3px solid #5ab4bd;
@@ -42,9 +43,9 @@ input[name="tab_item"] {
 
 /*選択されているタブのコンテンツのみを表示*/
 #all:checked ~ #all_content,
-#programming:checked ~ #programming_content,
-#design:checked ~ #design_content,
-#design2:checked ~ #design2_content {
+#terasaki:checked ~ #terasaki_content,
+#tanizaki:checked ~ #tanizaki_content,
+#onodera:checked ~ #onodera_content {
   display: block;
 }
 

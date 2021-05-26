@@ -1,35 +1,31 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './Recommended.css'
 
 const Recommended = () => {
   return(
-  <div className="tabs">
-    <input id="all" type="radio" name="tab_item" checked />
-    <label class="tab_item" for="all">総合</label>
-
-    <input id="programming" type="radio" name="tab_item" />
-    <label className="tab_item" for="programming">プログラミング</label>
-    
-    <input id="design" type="radio" name="tab_item" />
-    <label className="tab_item" for="design">デザイン</label>
-    
-    <input id="design2" type="radio" name="tab_item" />
-    <label className="tab_item" for="design2">デザイン2</label>
-    
-    <div className="tab_content" id="all_content">
-        総合の内容がここに入ります
-    </div>
-    <div className="tab_content" id="programming_content">
-        プログラミングの内容がここに入ります
-    </div>
-    <div className="tab_content" id="design_content">
-        デザインの内容がここに入ります
-    </div>
-    <div className="tab_content" id="design2_content">
-        デザイン2の内容がここに入ります
-    </div>
-  </div>
-)
+    <Tabs className="tabs">
+      <TabList>
+        <Tab  className="tab_item">共通</Tab>
+        <Tab　className="tab_item">寺崎</Tab>
+        <Tab　className="tab_item">谷崎</Tab>
+        <Tab　className="tab_item">小野寺</Tab>
+      </TabList>
+      <TabPanel>
+        <h2>CodeVillage</h2>
+      </TabPanel>
+      <TabPanel>
+        <h2>寺崎おすすめ</h2>
+      </TabPanel>
+      <TabPanel>
+        <h2>谷崎おすすめ</h2>
+      </TabPanel>
+      <TabPanel>
+        <h2>小野寺おすすめ</h2>
+      </TabPanel>
+    </Tabs>
+  )
 }
 
 export default Recommended
