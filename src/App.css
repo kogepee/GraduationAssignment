@@ -1,0 +1,33 @@
+/* ヘッダーのスタイル */
+header {
+  font-size: 5vw;
+  text-align: center;
+  background-color: pink;
+}
+
+/* フッターのスタイル */
+footer {
+  font-size: 3vw;
+  text-align: center;
+  background-color: pink;
+}
+
+/* h１のスタイル */
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px;
+}
+
+.transition {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+a {
+  margin-right: 50px;
+}
