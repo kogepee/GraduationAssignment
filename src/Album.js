@@ -13,25 +13,31 @@ const Album = () => {
         <Link to={`/Recommended`}>おすすめ機能 </Link>
       </div>
       <div className="box1">
-        <p className="box-title">寺崎 遼</p>
-        <p>ここに文章を入れます
-          <br />ここに文章を入れます
-          <br />ここに文章を入れます
-        </p>
+        <h2 className="name">寺崎 遼</h2>
+        <div className="box1-1">
+          <p>ここに文章を入れます
+            <br />ここに文章を入れます
+            <br />ここに文章を入れます
+          </p>
+        </div>
       </div>
       <div className="box2">
-        <p className="box-title">谷崎 奨</p>
-        <p>ここに文章を入れます
-          <br />ここに文章を入れます
-          <br />ここに文章を入れます
-        </p>
+        <h2 className="name">谷崎 奨</h2>
+        <div className="box2-2">
+          <p>ここに文章を入れます
+            <br />ここに文章を入れます
+            <br />ここに文章を入れます
+          </p>
+        </div>
       </div>
       <div className="box3">
-        <p className="box-title">小野寺一樹</p>
-        <p>ここに文章を入れます
-          <br />ここに文章を入れます
-          <br />ここに文章を入れます
-        </p>
+        <h2 className="name">小野寺一樹</h2>
+        <div className="box3-3">
+          <p>ここに文章を入れます
+            <br />ここに文章を入れます
+            <br />ここに文章を入れます
+          </p>
+        </div>
       </div>
     </div>
   )
