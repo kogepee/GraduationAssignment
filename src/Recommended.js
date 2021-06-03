@@ -1,3 +1,4 @@
+// reactインポート
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -5,10 +6,12 @@ import ReactPlayer from 'react-player';
 import './Recommended.css';
 import firebase from './firebase';
 
+// メイン部分ここから
 const Recommended = () => {
   const [messages, setMessages] =useState([])
   const [value, setValue] = useState('')
 
+// firebaseからインスタンスを取得
   useEffect(() => {
     firebase.firestore().collection('messages')
         .onSnapshot((snapshot) => {
@@ -19,6 +22,7 @@ const Recommended = () => {
         })
 }, [])
 
+// 挙動のキャンセルとアラート機能、テキストの追加
 const handleSubmit = e => {
   e.preventDefault()
   if ( value ==='') {
@@ -29,16 +33,20 @@ const handleSubmit = e => {
       content: value,
   })
 }
+
   return(
     <div>
+      {/* タイトル名 */}
       <h1>おすすめ機能</h1>
       <br />
+      {/* リンク先 */}
       <div className="transition">
-      <Link to={`/`}>最初の画面</Link>
-      <Link to={`/Album`}>アルバム</Link>
-      <br />
-      <br />
+        <Link to={`/`}>最初の画面</Link>
+        <Link to={`/Album`}>アルバム</Link>
+        <br />
+        <br />
       </div>
+      {/* タブの大枠 */}
       <Tabs className="tabs">
         <TabList>
           <Tab  className="tab_item">共通</Tab>
@@ -46,15 +54,18 @@ const handleSubmit = e => {
           <Tab　className="tab_item">谷崎</Tab>
           <Tab　className="tab_item">小野寺</Tab>
         </TabList>
+        {/* 共通のタブパネル */}
         <TabPanel>
           <a href="https://js.course.codevillage.jp/">
           CodeVillage
           </a>
+          <br />
           <li>
             {messages.map((message) => {
               return <li>{message.content}</li>;
             })}
-            </li>
+          </li>
+          <br />
           <form onSubmit={handleSubmit}>
             <input
               type='text'
@@ -67,6 +78,7 @@ const handleSubmit = e => {
             <button type="submit">送信</button>
           </form>
         </TabPanel>
+        {/* 寺崎のタブパネル */}
         <TabPanel>
           <ul>
             <li> 動画サンプル
@@ -81,9 +93,11 @@ const handleSubmit = e => {
             </li>
           </ul>
         </TabPanel>
+        {/* 谷崎のタブパネル */}
         <TabPanel>
           <h2>谷崎おすすめ</h2>
         </TabPanel>
+        {/* 小野寺のタブパネル */}
         <TabPanel>
           <h2>小野寺おすすめ</h2>
         </TabPanel>    
@@ -92,5 +106,7 @@ const handleSubmit = e => {
     </div>
   )
 }
+// メイン部分ここまで
 
+// Recommendedを外に出す
 export default Recommended
